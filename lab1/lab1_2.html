@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Внутренняя навигация — ссылки</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; }
+    header, main, footer { max-width: 980px; margin: 0 auto; padding: 16px; }
+    nav { background: #f6f6f6; border-radius: 10px; padding: 12px 16px; }
+    nav ul { margin: 0; padding-left: 18px; }
+    code { background: #f1f1f1; padding: 0 4px; border-radius: 4px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 10px; overflow: auto; }
+    pre code { background: transparent; padding: 0; }
+    section { padding-top: 8px; margin-top: 18px; border-top: 1px solid #e5e5e5; }
+    .back { display: inline-block; margin-top: 10px; }
+    .hint { color: #444; }
+    a img { border: none; }
+  </style>
+</head>
+
+<body>
+  <header id="top">
+    <h1>Внутренняя навигация</h1>
+    <p><a href="../index.html">На главную</a></p>
+
+    <nav aria-label="Оглавление">
+      <h2>Ссылки</h2>
+      <ul>
+        <li><a href="#make-link">Как сделать ссылку</a></li>
+        <li><a href="#target">Атрибут target</a></li>
+        <li><a href="#image-link">Изображение в качестве ссылки</a></li>
+        <li><a href="#page-links">Ссылки внутри страницы</a></li>
+      </ul>
+    </nav>
+
+    <p class="hint">
+      Гиперссылка — часть гипертекстового документа, которая указывает на другой элемент/файл/страницу.
+      Обычно ссылки выделяются цветом и меняют стиль при наведении. :contentReference[oaicite:1]{index=1}
+    </p>
+  </header>
+
+  <main>
+    <section id="make-link">
+      <h2>Как сделать ссылку</h2>
+      <p>
+        Ссылка создаётся тегом <code>&lt;a&gt;</code>. Главный атрибут — <code>href</code>,
+        в нём указывается адрес (URL). :contentReference[oaicite:2]{index=2}
+      </p>
+
+      <h3>Абсолютная ссылка</h3>
+      <p>Абсолютные ссылки начинаются с протокола (часто <code>https://</code>).</p>
+      <pre><code>&lt;p&gt;
+  &lt;a href="https://ya.ru"&gt;Поисковая система Яндекс&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+
+      <h3>Относительная ссылка</h3>
+      <p>
+        Относительные ссылки строятся относительно текущей страницы/папки:
+        <code>images/pic.jpg</code>, <code>../help/me.html</code> и т.д. :contentReference[oaicite:3]{index=3}
+      </p>
+      <pre><code>&lt;p&gt;&lt;a href="images/xxx.jpg"&gt;Посмотрите на мою фотографию!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="tip.html"&gt;Как сделать такое же фото?&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+      <a class="back" href="#top">Наверх ↑</a>
+    </section>
+
+    <section id="target">
+      <h2>Атрибут target</h2>
+      <p>
+        По умолчанию ссылка открывается в текущей вкладке. Атрибут <code>target</code> позволяет изменить поведение:
+        <code>_blank</code>, <code>_self</code>, <code>_parent</code>, <code>_top</code>. :contentReference[oaicite:4]{index=4}
+      </p>
+
+      <h3>Открытие в новой вкладке</h3>
+      <p>
+        Если используете <code>target="_blank"</code>, добавляйте
+        <code>rel="noopener noreferrer"</code>. :contentReference[oaicite:5]{index=5}
+      </p>
+      <pre><code>&lt;a href="https://webref.ru"
+   target="_blank"
+   rel="noopener noreferrer"&gt;
+  Ссылка откроется в новой вкладке
+&lt;/a&gt;</code></pre>
+
+      <h3>Тег base (чтобы все ссылки по умолчанию открывались в новой вкладке)</h3>
+      <pre><code>&lt;head&gt;
+  ...
+  &lt;base target="_blank"&gt;
+&lt;/head&gt;</code></pre>
+
+      <p>Пример ссылки, которая в таком случае всё равно откроется в текущем окне:</p>
+      <pre><code>&lt;a href="page.html" target="_self"&gt;Открыть в текущей вкладке&lt;/a&gt;</code></pre>
+
+      <a class="back" href="#top">Наверх ↑</a>
+    </section>
+
+<section id="image-link">
+      <h2>Изображение в качестве ссылки</h2>
+      <p>
+        В качестве ссылки можно использовать изображение: картинка помещается внутрь <code>&lt;a&gt;...&lt;/a&gt;</code>.
+        У изображения обязательно должен быть <code>alt</code>. :contentReference[oaicite:6]{index=6}
+      </p>
+
+      <h3>Пример (кликабельная картинка)</h3>
+      <p>
+        Ниже — рабочий пример (внешняя картинка). Вы можете заменить <code>src</code> на свою из папки <code>images/</code>.
+      </p>
+      <p>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://via.placeholder.com/90x60.png?text=LINK" width="90" height="60" alt="Пример изображения-ссылки">
+        </a>
+      </p>
+
+      <h3>Код примера</h3>
+      <pre><code>&lt;a href="sample.html"&gt;
+  &lt;img src="images/sample.gif" width="50" height="50" alt="Пример"&gt;
+&lt;/a&gt;</code></pre>
+
+      <p class="hint">
+        Если вокруг изображения появляется рамка, её можно убрать через CSS (например, <code>a img { border: none; }</code>). :contentReference[oaicite:7]{index=7}
+      </p>
+
+      <a class="back" href="#top">Наверх ↑</a>
+    </section>
+
+    <section id="page-links">
+      <h2>Ссылки внутри страницы</h2>
+      <p>
+        Для внутренней навигации используют якоря (закладки) — это элементы с уникальным <code>id</code>.
+        Переход делается ссылкой вида <code>href="#имя"</code>. :contentReference[oaicite:8]{index=8}
+      </p>
+
+      <h3>Пример якоря и ссылки</h3>
+      <pre><code>&lt;p id="top"&gt;&lt;/p&gt;
+...
+&lt;p&gt;&lt;a href="#top"&gt;Наверх&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+      <h3>Переход к якорю на другом сайте</h3>
+      <pre><code>&lt;a href="https://ru.wikipedia.org/wiki/HTML5#HTML_5.1"&gt;HTML 5.1&lt;/a&gt;</code></pre>
+
+      <p class="hint">
+        Если ссылка ведёт на якорь, которого нет, ошибка обычно не показывается — переход просто не произойдёт. :contentReference[oaicite:9]{index=9}
+      </p>
+
+      <a class="back" href="#top">Наверх ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>ЛР1 — Документ с внутренней навигацией от naelsyazy</p>
+  </footer>
+</body>
+</html>
