@@ -1,16 +1,16 @@
-## Hi there 👋
+# Привет! Я Alex
 
-<!--
-**NAELSYAZY/naelsyazy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Группа: 41PIfm
+Университет: ОГУ / Орловский гос. университет 
+GitHub Pages: https://naelsyazy.github.io
 
-Here are some ideas to get you started:
+## 🧰 Навыки
+- HTML / CSS (основы)
+- Git / GitHub
+- VS Code
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📌 Лабораторные
+- Лабораторная 1: https://naelsyazy.github.io/lab1/lab1_1.html
+
+## 📫 Контакты
+- Email: milonike@bk.ru
