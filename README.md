@@ -2,7 +2,7 @@
 
 Группа: 41PIfm
 Университет: ОГУ / Орловский гос. университет 
-GitHub Pages: https://naelsyazy.github.io
+GitHub Pages: https://github.com/NAELSYAZY
 
 ## 🧰 Навыки
 - HTML / CSS (основы)
