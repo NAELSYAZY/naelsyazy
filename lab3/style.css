@@ -1,0 +1,119 @@
+@import url("reset.css");
+/*
+Для сравнения с Bootstrap Reboot замените первую строку на:
+@import url("bootstrap-reboot.css");
+*/
+
+:root {
+  --page-bg: #101318;
+  --page-text: #eef3f8;
+  --accent: #cf3d4f;
+  --accent-soft: #f0b7bf;
+  --green: #5ad66f;
+  --article-bg: rgba(255, 255, 255, 0.06);
+  --article-border: rgba(240, 183, 191, 0.4);
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--page-text);
+  background:
+    radial-gradient(circle at 25px 25px, rgba(255,255,255,0.05) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(255,255,255,0.04) 2px, transparent 0),
+    linear-gradient(135deg, #141922 25%, #11151c 25%, #11151c 50%, #141922 50%, #141922 75%, #11151c 75%, #11151c 100%);
+  background-size: 100px 100px, 100px 100px, 24px 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+main {
+  padding: 32px 0 48px;
+}
+
+article {
+  margin: 24px 0;
+  padding: 24px 28px;
+  border: 2px solid var(--article-border);
+  border-radius: 24px;
+  background: var(--article-bg);
+  box-shadow: 0 12px 30px var(--shadow);
+  backdrop-filter: blur(4px);
+}
+
+p {
+  text-align: right;
+  margin: 0 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: right;
+  color: var(--accent);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.35rem;
+  margin: 0 0 1.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(to left, transparent, var(--accent-soft), transparent);
+}
+
+em {
+  color: var(--green);
+  font-style: italic;
+}
+
+strong {
+  font-family: "Caveat", cursive;
+  font-size: 1.2em;
+  color: #b24557;
+}
+
+article p:last-child,
+article h2:last-child {
+  margin-bottom: 0;
+}
+
+.math-block {
+  overflow-x: auto;
+}
+
+.author {
+  color: #6d7885;
+}
+
+.page-title {
+  margin-top: 0;
+}
+
+footer {
+  text-align: right;
+  font-size: 1rem;
+  color: #7d8694;
+  margin-top: 2rem;
+}
