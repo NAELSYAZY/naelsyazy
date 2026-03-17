@@ -9,6 +9,8 @@ GitHub Pages: https://github.com/NAELSYAZY
 - Git / GitHub
 - VS Code
 
+## 📌 Лабораторные
+- Лабораторная 1: https://naelsyazy/lab1/lab1_1.html
 
 ## 📫 Контакты
 - Email: milonike@bk.ru
