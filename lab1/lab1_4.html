@@ -1,216 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ЛР1 — Изображения (img, figure, picture)</title>
-  <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.55; margin: 0; }
-    header, main, footer { max-width: 980px; margin: 0 auto; padding: 16px; }
-    nav { background: #f6f6f6; border-radius: 12px; padding: 12px 16px; }
-    nav ul { margin: 0; padding-left: 18px; }
-    code { background: #f1f1f1; padding: 0 4px; border-radius: 4px; }
-    pre { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 12px; overflow: auto; }
-    pre code { background: transparent; padding: 0; }
-    img { max-width: 100%; height: auto; }
-    figure { margin: 18px 0; padding: 12px; border: 1px solid #e5e5e5; border-radius: 12px; }
-    figcaption { margin-top: 8px; color: #444; font-size: 0.95rem; }
-    .fitbox { background: #f2f2f2; border-radius: 12px; padding: 12px; }
-    .fitbox img.fixed { width: 360px; height: 160px; object-fit: contain; background: #ddd; border-radius: 10px; }
-    .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 720px) { .row { grid-template-columns: 1fr 1fr; } }
-    .back { display: inline-block; margin-top: 10px; }
-    .note { color: #444; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Изображения</title>
 </head>
-
 <body>
-  <header id="top">
-    <h1>Изображения</h1>
+<section class="center">
+        <h1>Изображения</h1>
     <p><a href="../index.html">На главную</a></p>
+    <h2>Элемент <code>img</code></h2>
 
-    <nav aria-label="Оглавление">
-      <h2>Содержание</h2>
-      <ul>
-        <li><a href="#img">Элемент <code>img</code></a></li>
-        <li><a href="#alt">Альтернативный текст (<code>alt</code>)</a></li>
-        <li><a href="#size">Размеры изображения (<code>width</code>, <code>height</code>)</a></li>
-        <li><a href="#responsive">Гибкие изображения (<code>srcset</code>, <code>sizes</code>)</a></li>
-        <li><a href="#figure">Подпись к изображению (<code>figure</code>, <code>figcaption</code>)</a></li>
-        <li><a href="#picture">Элемент <code>picture</code></a></li>
-      </ul>
-    </nav>
+    <p>Элемент <code>img</code> внедряет изображение в текущий документ в месте определения элемента. Элемент
+        <code>img</code> не имеет содержимого — он замещается на ходу изображением, указанным в атрибуте
+        <code>src</code>.</p>
+		<figure style="text-align: center;">
+			<img src="images/redcat.jpg" alt="Изображение 1">
+		</figure>
 
-    <p class="note">
-      Эта страница демонстрирует внедрение изображений в HTML и основные атрибуты/элементы для работы с ними.
+    <h2>Альтернативный текст</h2>
+    <p>Атрибут <code>alt</code> предоставляет краткое описание изображения. Он содержит альтернативный текст, который
+        отображается, если изображение не может быть выведено. Пользовательские агенты должны отображать альтернативный
+        текст, если они не поддерживают изображения, или сконфигурированы так, чтобы не показывать изображения (отключен
+        показ изображений).</p>
+		<figure style="text-align: center;">
+			<img src="images/redcat.jpg" alt="рыжий кот">
+		</figure>
+
+    <h2>Размеры изображения</h2>
+    <p>Атрибуты <code>width</code> и <code>height</code> задают размеры области изображения. Если оба атрибута не
+        заданы, размер изображения будет определен после его полной загрузки, после чего размеры области будут изменены
+        для размещения содержания картинки.
+        Если задан только один из атрибутов, второй размер будет высчитан в соответствие с пропорциями изображения и
+        заданным атрибутом.
+        При указании обоих атрибутов ПА «впишет» изображение в область с указанными размерами.</p>
+		<figure style="text-align: center;">
+			<img src="images/aquaria.jpg" alt="Кот" width="250" height="150">
+		</figure>
+		<figure style="text-align: center;">
+			<img src="images/aquaria.jpg" alt="Кот" width="400" height="250">
+		</figure>
+		
+    <p>Для добавления гибких (responsive) изображений (таких,
+        которые отображаются хорошо на устройствах с сильно отличающимися размерами экрана, разрешением, и другими
+        характеристиками)
+        используют атрибуты <code>sizes</code> и <code>srcset</code>.
+        Атрибут <code>sizes</code> задаёт размеры изображения для разных макетов страницы.
+        Атрибут <code>srcset</code> задаёт путь к графическим файлам с учётом размера изображения и устройств.</p>
+		<figure style="text-align: center;">
+			<img src="images/mushroom.jpg" alt="Мухомор" sizes="(max-width: 1280px) 100vw, 1280px"
+				 srcset="images/mushroom_portrait.jpg 320w,
+				 		 images/mushroom_landscape.jpg 480w,
+						 images/mushroom_landscape.jpg 800w,
+						 images/mushroom_retina.jpg 1280w">
+		</figure>
+		
+
+
+
+    <h2>Подпись к изображению</h2>
+    <p>Для группирования любых элементов, например, изображений и подписей к ним используется элемент <code>figure</code>.
+        Он не должен быть связан непосредственно с основным содержимым документа и при его перемещении в другое место
+        смысл текста не должен меняться.
+        Обычно применяется для иллюстраций, фрагментов кода, схем, графиков, диаграмм и др.
+        Элемент <code>figcaption</code> содержит описание для элемента <code>figure</code>. Он должен быть первым или
+        последним элементом в группе.</p>
+
+    <figure style="text-align: center;">
+        <img src="images/html5-logo.png" alt="HTML лого" width="400" height="300">
+        <figcaption>Лого HTML</figcaption>
+    </figure>
+
+	<figure style="text-align: center;">
+		<img src="images/muscle.png" alt="Мускулы" width="400" height="300">
+		<figcaption>Строение человека</figcaption>
+	</figure>
+	
+
+    <h2>Элемент picture</h2>
+    <p>
+        HTML-элемент <code>picture</code> служит контейнером для одного или более элементов
+        <code>source</code> и одного элемента <code>img</code> для обеспечения оптимальной версии изображения
+        для различных размеров экрана. Браузер рассмотрит каждый из дочерних элементов <code>source</code>
+        и выберет один, соответствующий лучшему совпадению; если совпадений среди элементов <code>source</code>
+        найдено не будет, то будет выбран файл, указанный атрибутом <code>src</code> элемента <code>img</code>.
+        Затем выбранное изображение отображается в пространстве, занятом элементом <code>img</code>.
+		<figure style="text-align: center;">
+			<picture>
+				<source srcset="image-320w.jpg" media="(max-width: 320px)">
+				<source srcset="image-480w.jpg" media="(max-width: 480px)">
+				<source srcset="image-800w.jpg" media="(max-width: 800px)">
+				<img src="images/globus.gif" alt="gif глобус">
+			</picture>
+			<figcaption>Gif Глобус</figcaption>
+		</figure>
     </p>
-  </header>
-
-  <main>
-    <section id="img">
-      <h2>Элемент <code>img</code></h2>
-      <p>
-        Элемент <code>&lt;img&gt;</code> внедряет изображение в документ в месте, где он расположен.
-        У него нет содержимого: он заменяется на изображение из атрибута <code>src</code>.
-      </p>
-
-      <div class="row">
-        <figure>
-          <img src="images/html5-logo.png"
-               alt="Логотип HTML5 (PNG)"
-               width="128" height="128"
-               loading="lazy" decoding="async">
-          <figcaption>Пример 1 — обычный <code>img</code> (PNG), добавлены <code>loading</code> и <code>decoding</code>.</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/html5-logo.svg"
-               alt="Логотип HTML5 (SVG)"
-               width="128" height="128"
-               loading="lazy" decoding="async">
-          <figcaption>Пример 2 — тот же логотип в формате SVG.</figcaption>
-        </figure>
-      </div>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-
-    <section id="alt">
-      <h2>Альтернативный текст (<code>alt</code>)</h2>
-      <p>
-        Атрибут <code>alt</code> задаёт краткое описание изображения. Он отображается, если изображение не загрузилось
-        или отключён показ изображений, и используется скринридерами.
-      </p>
-
-      <figure>
-        <img src="images/globus.gif"
-             alt="Вращающийся глобус (анимация GIF)"
-             width="200" height="200"
-             loading="lazy" decoding="async">
-        <figcaption>
-          Пример 3 — у каждого изображения есть осмысленный <code>alt</code>.
-        </figcaption>
-      </figure>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-
-    <section id="size">
-      <h2>Размеры изображения (<code>width</code>, <code>height</code>)</h2>
-      <p>
-        Атрибуты <code>width</code> и <code>height</code> задают размер области изображения.
-        Если задан только один размер — второй вычисляется по пропорциям картинки.
-      </p>
-
-      <div class="row">
-        <figure>
-          <img src="images/redcat.jpg"
-               alt="Рыжий кот (уменьшение по ширине)"
-               width="250"
-               loading="lazy" decoding="async">
-          <figcaption>Пример 4 — задан только <code>width="250"</code>, высота рассчитывается автоматически.</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/redcat.jpg"
-               alt="Рыжий кот (уменьшение по высоте)"
-               height="120"
-               loading="lazy" decoding="async">
-          <figcaption>Пример 5 — задан только <code>height="120"</code>, ширина рассчитывается автоматически.</figcaption>
-        </figure>
-      </div>
-
-      <div class="fitbox">
-        <p class="note">
-          Ниже показана «область», заданная одновременно по ширине и высоте. Чтобы изображение аккуратно «вписалось»
-          в область без искажений, применён CSS <code>object-fit: contain</code>.
-        </p>
-
-        <figure>
-          <img class="fixed"
-               src="images/redcat.jpg"
-               alt="Рыжий кот, вписанный в область 360×160"
-               width="360" height="160"
-               loading="lazy" decoding="async">
-          <figcaption>Пример 6 — заданы <code>width</code> и <code>height</code>, изображение вписано в область.</figcaption>
-        </figure>
-      </div>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-
-    <section id="responsive">
-      <h2>Гибкие изображения (<code>srcset</code>, <code>sizes</code>)</h2>
-      <p>
-        Для responsive‑изображений используют <code>srcset</code> (набор файлов разных размеров) и <code>sizes</code>
-        (какую ширину будет занимать изображение в разных макетах).
-      </p>
-
-      <figure>
-        <img
-          src="images/mushroom_landscape.jpg"
-          alt="Гриб (вариант landscape)"
-          width="600" height="300"
-          loading="lazy" decoding="async"
-          srcset="images/mushroom_landscape.jpg 600w,
-                  images/mushroom_retina.jpg 1200w"
-          sizes="(max-width: 700px) 100vw, 600px">
-        <figcaption>
-          Пример 7 — <code>srcset</code> (600w и 1200w) + <code>sizes</code>.
-          На узких экранах картинка занимает всю ширину (<code>100vw</code>), на широких — до 600px.
-        </figcaption>
-      </figure>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-
-    <section id="figure">
-      <h2>Подпись к изображению (<code>figure</code>, <code>figcaption</code>)</h2>
-      <p>
-        Для группирования изображения и подписи используется <code>figure</code>, а текст подписи размещают в
-        <code>figcaption</code> (первым или последним элементом внутри <code>figure</code>).
-      </p>
-
-      <figure>
-        <img src="images/aquaria.jpg"
-             alt="Аквариум с рыбками"
-             width="300" height="225"
-             loading="lazy" decoding="async">
-        <figcaption>Пример 8 — иллюстрация оформлена как <code>figure</code> с подписью <code>figcaption</code>.</figcaption>
-      </figure>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-
-    <section id="picture">
-      <h2>Элемент <code>picture</code></h2>
-      <p>
-        <code>&lt;picture&gt;</code> позволяет выбрать оптимальный файл изображения в зависимости от условий (например, ширины экрана).
-        Браузер проверяет <code>&lt;source&gt;</code> по порядку и выбирает первый подходящий; иначе берёт <code>src</code> у <code>img</code>.
-      </p>
-
-      <figure>
-        <picture>
-          <source media="(min-width: 720px)" srcset="images/mushroom_landscape.jpg">
-          <source media="(max-width: 719px)" srcset="images/mushroom_portrait.jpg">
-          <img src="images/mushroom.jpg"
-               alt="Гриб (fallback)"
-               width="600" height="488"
-               loading="lazy" decoding="async">
-        </picture>
-        <figcaption>
-          Пример 9 — <code>picture</code>: на широком экране подставляется landscape,
-          на узком — portrait, иначе используется fallback (<code>img src=...</code>).
-        </figcaption>
-      </figure>
-
-      <a class="back" href="#top">Наверх</a>
-    </section>
-  </main>
-
-  <footer>
-    <hr>
-    <p>ЛР1 — lab1_4.html</p>
-  </footer>
+</section>
 </body>
 </html>
