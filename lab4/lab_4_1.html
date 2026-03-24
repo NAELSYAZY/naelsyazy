@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Красивое меню</title>
+	<style>
+		body {
+			margin: 40px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+		}
+
+		.menu {
+			width: 240px;
+			background: linear-gradient(180deg, #2d5d8a, #1f4363);
+			border-radius: 16px;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			padding: 10px 0;
+		}
+		
+		.menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 5px 12px;
+		}
+		
+		.menu li {
+			padding: 6px 0;
+		}
+		
+		.menu li a {
+			display: block;
+			padding: 14px 16px;
+			text-transform: uppercase;
+			text-decoration: none;
+			background: rgba(255, 255, 255, 0.92);
+			color: #2d5d8a;
+			font-size: 22px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			border-radius: 10px;
+			transition: all 0.3s ease;
+			box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+		}
+		
+		.menu li a:hover {
+			background: linear-gradient(90deg, #fff7c2, #ffe48a);
+			color: #173752;
+			transform: translateX(8px) scale(1.03);
+			box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+		}
+	</style>
+</head>
+<body>
+	<nav class="menu">
+		<ul>
+			<li><a href="#">Фильмы</a></li>
+			<li><a href="#">Музыка</a></li>
+			<li><a href="#">Софт</a></li>
+			<li><a href="#">Игры</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
