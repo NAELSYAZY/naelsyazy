@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Встраиваемый контент</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 30px;
+            color: #111;
+        }
+        section {
+            margin-bottom: 32px;
+        }
+        iframe, video, audio, object {
+            display: block;
+            margin-top: 12px;
+        }
+        iframe, object {
+            border: 1px solid #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Встраиваемый контент</h1>
+
+    <p>На странице показаны несколько вариантов внедрения контента: встроенный HTML-фрейм, видеоролик, аудиофайл и PDF-документ.</p>
+
+    <section>
+        <h2>Демонстрация добавления встроенного фрейма</h2>
+        <iframe src="list.html" width="560" height="315" title="Встроенный HTML-документ"></iframe>
+    </section>
+
+    <section>
+        <h2>Демонстрация добавления на страницу видео</h2>
+        <video width="560" height="315" controls>
+            <source src="04_media/video_sample.mp4" type="video/mp4">
+            Ваш браузер не поддерживает элемент video.
+        </video>
+    </section>
+
+    <section>
+        <h2>Демонстрация добавления на страницу аудио</h2>
+        <audio controls>
+            <source src="04_media/audio_sample.wav" type="audio/wav">
+            Ваш браузер не поддерживает элемент audio.
+        </audio>
+    </section>
+
+    <section>
+        <h2>Демонстрация добавления PDF на страницу</h2>
+        <object data="04_media/demo.pdf" type="application/pdf" width="560" height="315">
+            <p>PDF-файл можно открыть отдельно: <a href="04_media/demo.pdf">demo.pdf</a>.</p>
+        </object>
+    </section>
+</body>
+</html>
