@@ -5,7 +5,6 @@
 GitHub Pages: https://github.com/NAELSYAZY
 
 ## 🧰 Навыки
-- HTML / CSS (основы)
 - Git / GitHub
 - VS Code
 
